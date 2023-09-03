@@ -164,31 +164,22 @@ btns.forEach((element) => {
                         divEachAlbum.append(pData, deleteButton)
                         divData.append(divEachAlbum)
                         
-                        // creating an Object with each iteration
-                        const obj = 
-                            {
-                                paragraph: pData,
-                                button: deleteButton
-                            }
-                        // adding the object to a list
-                        divDataList.push(obj)
                     }
 
-                    console.log(divData)
+                    // accessing to the elements inside div data
+                    divData.addEventListener("click", (e) => {
+                        console.log(e.target)
 
-                    console.log(divDataList.length)
-                    divDataList.forEach((element) => {
-                        console.log(element)
-                        console.log(element.button)
-                        element.button.addEventListener("click", ()=>{
-                            divData.remove(divEachAlbum)
-                        })
-                        console.log(divDataList.length)
+                        // checking what element has been clicked
+                        if (e.target.tagName === "P"){
+                            e.target.classList.toggle("pData-marked")
+                        }
+                        else if (e.target.tagName === "BUTTON"){
+                            e.target.parentElement.remove()
+                        }
                     })
-                    
-
-
                 }
+                    
             }, 1000);
         } 
 

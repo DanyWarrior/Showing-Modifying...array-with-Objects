@@ -124,9 +124,16 @@ body {
     border-radius: 10px;
 }
 .pData-button:hover {
-    background-color: lightcoral;
+    background-color: rgb(252, 57, 57);
+    color: white;al;
 }
 .pData-button:active {
-    background-color: red;
+    background-color: rgb(151, 30, 30);
     color: white;
+}
+
+.pData-marked {
+    background-color: rgb(252, 57, 57);
+    color: white;
+    transition: .3s;
 }
