@@ -93,6 +93,12 @@ body {
     align-items: center;   
 }
 
+.divEachAlbum {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 .pData {
     background-color: rgb(186, 242, 255);
     width: 650px;
@@ -108,4 +114,19 @@ body {
 
 .pData:hover{
     box-shadow: 0 0 5px 1px rgb(32, 152, 250);
+}
+
+.pData-button {
+    background-color: lightpink;
+    width: 55px;
+    height: 55px;
+    border: solid 1px black;
+    border-radius: 10px;
+}
+.pData-button:hover {
+    background-color: lightcoral;
+}
+.pData-button:active {
+    background-color: red;
+    color: white;
 }

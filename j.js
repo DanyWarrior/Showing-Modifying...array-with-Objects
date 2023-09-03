@@ -90,7 +90,7 @@ let albums = [
 
 
 let box_container = document.querySelector(".box-container")
-console.log(box_container)
+
 const btns = document.querySelectorAll(".btn")
 
 
@@ -112,7 +112,7 @@ btns.forEach((element) => {
 
 
         //    countDown
-            let seconds = 3
+            let seconds = 0
 
             // creating a div for the Count Down
             let div_countDown = document.createElement("div")
@@ -141,15 +141,53 @@ btns.forEach((element) => {
                     divData.classList.add("divData")
                     document.body.appendChild(divData)
 
+                    let divDataList = []
+
                     // creating some kind of table
+                    // showing album with it's own delete button
                     for (element of albums){
-                        
+
+                        // container for each album and button
+                        let divEachAlbum = document.createElement("div")
+                        divEachAlbum.classList.add("divEachAlbum")
+
+                        // album
                         let pData = document.createElement("p")
                         pData.textContent = `Name: ${element.title} --- Artist: ${element.artist} ... Year: ${element.year} ... Genre: ${element.genre} `
                         pData.classList.add("pData")
-                        divData.appendChild(pData)
-                        console.log(element.title)
+
+                        // button
+                        let deleteButton = document.createElement("button")
+                        deleteButton.classList.add("pData-button")
+                        deleteButton.textContent = "delete album"
+
+                        divEachAlbum.append(pData, deleteButton)
+                        divData.append(divEachAlbum)
+                        
+                        // creating an Object with each iteration
+                        const obj = 
+                            {
+                                paragraph: pData,
+                                button: deleteButton
+                            }
+                        // adding the object to a list
+                        divDataList.push(obj)
                     }
+
+                    console.log(divData)
+
+                    console.log(divDataList.length)
+                    divDataList.forEach((element) => {
+                        console.log(element)
+                        console.log(element.button)
+                        element.button.addEventListener("click", ()=>{
+                            divData.remove(divEachAlbum)
+                        })
+                        console.log(divDataList.length)
+                    })
+                    
+
+
                 }
             }, 1000);
         } 
