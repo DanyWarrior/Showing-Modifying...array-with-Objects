@@ -141,7 +141,25 @@ btns.forEach((element) => {
                     divData.classList.add("divData")
                     document.body.appendChild(divData)
 
-                    let divDataList = []
+
+                    // creating a button to add albums
+                    let addButton = document.createElement("a")
+                    addButton.textContent = "Add Album"
+                    addButton.classList.add("addAlbum")
+                    divData.prepend(addButton)
+                    
+                    // adding new object to the albums list
+                    addButton.addEventListener("click", ()=>{
+
+                        let obj = {
+                            title: prompt("Album Title: "),
+                            artist: prompt("Album Artis: "),
+                            year: prompt("Album Year: "),
+                            genre: prompt("Album Genre: ")
+                        }
+                        albums.unshift(obj)
+                        console.log(albums)
+                    })
 
                     // creating some kind of table
                     // showing album with it's own delete button

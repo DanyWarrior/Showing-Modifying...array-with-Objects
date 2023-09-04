@@ -93,6 +93,25 @@ body {
     align-items: center;   
 }
 
+.addAlbum {
+    background-color: lightgreen;
+    display: block;
+    width: 100px;
+    height: 40px;
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    padding: 9px;
+    font-weight: 600;
+    border: solid 1px black;
+    border-radius: 10px;
+}
+
+.addAlbum:hover {
+    background-color: rgb(88, 255, 88);
+    box-shadow: 0 0 5px 1px rgb(32, 152, 250);
+}
+
 .divEachAlbum {
     display: flex;
     flex-direction: row;
@@ -125,7 +144,8 @@ body {
 }
 .pData-button:hover {
     background-color: rgb(252, 57, 57);
-    color: white;al;
+    box-shadow: 0 0 5px 1px rgb(32, 152, 250);
+    color: white;
 }
 .pData-button:active {
     background-color: rgb(151, 30, 30);
@@ -136,4 +156,52 @@ body {
     background-color: rgb(252, 57, 57);
     color: white;
     transition: .3s;
+}
+
+
+/* ------------ Form Container ------------ */
+
+.formContainer {
+    margin: 50px;
+    background-color: lightblue;
+    width: 400px;
+    height: 400px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+    align-items: center;
+}
+
+.type {
+    margin-top: 25px;
+}
+
+label {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+input {
+    height: 40px;
+    border-radius: 10px;
+}
+
+.button-addNewAlbum {
+    background-color: lightgreen;
+    display: block;
+    width: 100px;
+    height: 40px;
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    padding: 9px;
+    font-weight: 600;
+    border: solid 1px black;
+    border-radius: 10px;
+}
+
+.button-addNewAlbum:hover {
+    background-color: rgb(73, 249, 73);
+    box-shadow: 0 0 5px 0px;
 }
