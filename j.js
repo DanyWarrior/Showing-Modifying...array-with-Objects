@@ -152,13 +152,30 @@ btns.forEach((element) => {
                     addButton.addEventListener("click", ()=>{
 
                         let obj = {
-                            title: prompt("Album Title: "),
+                            title: prompt("Album Name: "),
                             artist: prompt("Album Artis: "),
                             year: prompt("Album Year: "),
                             genre: prompt("Album Genre: ")
                         }
                         albums.unshift(obj)
                         console.log(albums)
+
+                        // container for each album and button
+                        let divEachAlbum = document.createElement("div")
+                        divEachAlbum.classList.add("divEachAlbum")
+
+                        // album
+                        let pData = document.createElement("p")
+                        pData.textContent = `Name: ${albums[0].title} --- Artist: ${albums[0].artist} ... Year: ${albums[0].year} ... Genre: ${albums[0].genre} `
+                        pData.classList.add("pData")
+
+                        // button
+                        let deleteButton = document.createElement("button")
+                        deleteButton.classList.add("pData-button")
+                        deleteButton.textContent = "delete album"
+
+                        divEachAlbum.append(pData, deleteButton)
+                        addButton.after(divEachAlbum)
                     })
 
                     // creating some kind of table
